@@ -1,0 +1,470 @@
+/*
+Custom Styles
+
+Contents
+
+:: Hero Unit
+:: Input Fields
+:: Dropdown menus (popover)
+:: Tables
+:: ...
+
+*/
+
+/* Overwriting Bootstrap Styes */
+
+/* Hero Unit */
+.hero-unit {
+	@include border-radius($baseBorderRadius);
+}
+
+
+/* Input Fields */
+$inputBorder: darken(#fff, 20%) !default;
+$inputFocusBgColor: darken(#fff, 2%) !default;
+$inputFocusBorderColor: darken(#fff, 26%) !default;
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+	font-family: inherit;
+	border: 1px solid $inputBorder;
+	@include box-shadow(inset 0 1px 2px rgba(0,0,0,0.1));
+	@include transition(all 0.15s linear);
+		&:focus {
+			background: $inputFocusBgColor;
+			border-color: $inputFocusBorderColor;
+			box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+		}
+		&[disabled] { background-color: #ddd; }
+}
+
+input.search-query {
+	@include border-radius($borderRadiusSmall);
+}
+
+/* Dropdown Menus, etc */
+.dropdown-menu, .popover {
+	@include border-radius($baseBorderRadius);
+}
+
+/* Modals */
+.modal {
+  border: 9px solid #333;
+  border: 9px solid rgba(0,0,0,.4);
+  *border: 9px solid #333; /* IE6-7 */
+  @include border-radius(6px);
+  @include box-shadow(none);
+}
+
+.modal-backdrop,
+.modal-backdrop.fade.in {
+  @include opacity(60);
+}
+
+/* Tables */
+/* Modified version of Foundation tables */
+
+$tableHeadFootBackgroundColor: #f5f5f5;
+
+table {
+  background: #fff;
+  margin: 0 0 18px;
+  border: 1px solid #ddd;
+  @include border-radius($baseBorderRadius);
+  /* border-spacing: 2px !important; */
+  border-collapse: collapse;
+  font-size: 0.92em;
+  width: 100%;
+}
+
+table thead, table tfoot { background: $tableHeadFootBackgroundColor; }
+
+table thead tr th,
+table tfoot tr th,
+table tbody tr td,
+table tr td,
+table tfoot tr td {
+	display: table-cell;
+	font-size: ms(0);
+	line-height: 18px;
+	text-align: left;
+}
+
+table thead tr th,
+table tfoot tr td { padding: 8px 10px 9px; font-size: ms(0); font-weight: bold; color: #222; border: 2px solid white; }
+table thead tr th:first-child, table tfoot tr td:first-child { border-left: none; }
+table thead tr th:last-child, table tfoot tr td:last-child { border-right: none; }
+
+table tbody tr.even,
+table tbody tr.alt { background: #f9f9f9; }
+/* table tbody tr:nth-child(even) { background: #f9f9f9; } */
+table tbody tr td { color: #333; padding: 10px 11px; vertical-align: top; }
+
+/* Table Sorting
+table.tablesorter thead tr .header {
+	background-image: url(../img/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../img/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../img/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: darken($tableHeadFootBackgroundColor, 10%);
+}
+
+.tablesorter thead tr th {
+	padding-right: 16px;
+}
+
+*/
+
+table thead tr th {
+	 padding-right: 30px;
+}
+
+.sortdirection {
+	float: right;
+    margin-right: -22px;
+    margin-top: 2px;
+}
+
+/* Table Controls */
+table thead tr th button {
+	float: left;
+}
+
+.table-filter {
+	float: right;
+	margin-bottom: 0 !important;
+}
+
+#table-count {
+	padding: 0.6em 2em;
+	margin-right: 1em;
+}
+
+.spinner-warning {
+	padding: 0.6em 2em 0.6em 30px !important;
+	background: #F89406 url("../img/spinner-orange-bg.gif") no-repeat;
+	background-position: 7px 6px;
+}
+
+// initial state is hidden (see template; class=hide)
+#total-records {
+	font-weight: normal;
+}
+
+
+
+
+
+/* NavBar */
+.navbar-inverse .navbar-inner {
+    border: none;
+    border-bottom: 2px solid #4e7294;
+    background: #0a253d url("../img/navbg.png") repeat-x;
+    @include box-shadow(0px 0px 30px 2px rgba(170, 170, 170, .9));
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar-inverse .nav > li > a {
+    @include transition-property(background-color);
+    @include transition-duration(0.2s);
+  	@include transition-timing-function(ease-in-out);
+}
+
+.navbar-inverse .brand {
+    @include transition-property(text-shadow);
+    @include transition-duration(0.2s);
+  	@include transition-timing-function(ease-in-out);
+}
+
+.navbar-inverse .brand:hover {
+    @include text-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
+}
+
+
+
+
+/* Global Styles */
+
+body {
+	background: #e8ecef url("../img/belt.jpg") bottom right no-repeat;
+	background-size: cover;
+}
+
+.cancel-link {margin-left: 20px;}
+
+$footerHeight: 				150px;
+$footerTopHeight: 			109px; // 1px less than total height
+$footerBottomHeight:		$footerHeight - $footerTopHeight;
+$footerBackground:          #0f2a42 !default;
+$footerBackgroundHighlight: #294b6a !default;
+$footerBorder:              #0f2a42 !default;
+
+#layout {
+	height: auto !important;
+    margin: 0 auto -$footerHeight;
+    min-height: 100%;
+}
+
+#content {
+	padding-top: 50px;
+}
+
+// top padding for small screens
+@media (max-width: 979px) {
+	#content {
+			padding-top: 0;
+	}
+}
+
+
+@include sticky-footer($footerHeight, "#layout", "#layout-footer", "#page-footer");
+
+#page-footer #footer-top {
+	height: $footerTopHeight;
+	// border-bottom: 1px solid $footerBackground;
+	// @include background-image(linear-gradient($footerBackground, $footerBackgroundHighlight));
+	// color: $white;
+	//text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+	// text-align: center;
+	// line-height: $footerTopHeight;
+	#su-logo {
+		float: left;
+		margin-top: 35px;
+	}
+	#som-logo {
+		float: right;
+		margin-top: 35px;
+	}
+	#footer-links {
+		height: $footerTopHeight;
+		margin: 0 auto;
+		display: inline-block;
+		ul {
+			margin: 0;
+			list-style: none;
+			li {
+				line-height: $footerTopHeight;
+				margin-right: 15px;
+				float: left;
+			}
+		}
+	}
+}
+
+#page-footer #footer-bottom {
+	height: $footerBottomHeight;
+	line-height: $footerBottomHeight;
+	text-align: center;
+	// background-color: #33587b;
+	// color: $white;
+	text-shadow: 0 -1px rgba(255, 255, 255, 0.3);
+}
+
+
+#page-footer {
+	color: rgb(111, 111, 111);
+	background-color: #E8ECEF;
+	-webkit-box-shadow: inset 0px 15px 15px 0px rgba(219, 222, 225, .8);
+	box-shadow: inset 0px 15px 15px 0px rgba(219, 222, 225, .8);
+}
+
+
+// fix footer width for small screens + content margin fix
+@media (max-width: 767px) {
+	#footer {
+		margin-left: -20px;
+    	margin-right: -20px;
+	}
+}
+
+#footer .container {
+	// padding: 15px;
+}
+
+#submit-controls {
+	padding: 5px;
+	background-color: #f7fbfe;
+	@include border-radius($baseBorderRadius);
+}
+
+.panel {
+	background-color: #fff;
+	border: 1px solid #ced5dc;
+    @include border-radius($baseBorderRadius);
+    @include box-shadow(0 0 6px rgba(195, 202, 211, 0.5));
+    margin: 10px 0 20px;
+    padding: 14px 10px 10px;
+}
+
+
+
+
+/* Data Display - Based on Bootstrap Forms Layout
+   Used for displaying Read Only data in a form type layout
+   E.g. Key/value pairs */
+
+.validation-status-labels {
+	font-weight: bold;
+	font-size: 1.2em;
+	float: right;
+}
+
+
+.data-display {
+  // Increase spacing between groups
+  .data-group {
+    margin-bottom: 7px;
+    @include clearfix();
+  }
+  // Float the labels left
+  .data-label {
+    float: left;
+    width: $horizontalComponentOffset - 20;
+    padding-top: 5px;
+    text-align: right;
+  }
+  // Move over all input controls and content
+  .data-values {
+    // Super jank IE7 fix to ensure the inputs in .input-append and input-prepend
+    // do not inherit the margin of the parent, in this case .controls
+    *display: inline-block;
+    *padding-left: 20px;
+    margin-left: $horizontalComponentOffset;
+    *margin-left: 0;
+    &:first-child {
+      *padding-left: $horizontalComponentOffset;
+    }
+  }
+  // Move over buttons in .form-actions to align with .controls
+  .form-actions {
+    padding-left: $horizontalComponentOffset;
+  }
+}
+
+.data-group .row {margin-top: 10px;}
+
+.data-label {
+  font-weight: bold;
+  text-align: right;
+}
+.data-values {
+	padding-top: 5px;
+	margin-bottom: 5px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/* Making data displays responsive */
+// UP TO LANDSCAPE PHONE
+
+@media (max-width: 480px) {
+  // Remove the horizontal form styles
+  .data-display {
+    .data-label {
+      float: none;
+      width: auto;
+      padding-top: 0;
+      text-align: left;
+    }
+    .data-group {
+    	margin-bottom: 15px;
+    }
+    // Move over all input controls and content
+    .data-values, label {
+      margin-left: 0;
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Validation Details Page */
+.type-validation.view-detail {
+		header {
+			margin: 0 15px;
+
+			h3 {
+				margin-bottom: 0;
+			}
+	}
+}
+
+
+.type-validation.view-detail figure {
+	@include border-radius($baseBorderRadius);
+	padding: 10px;
+	border: 1px solid;
+	text-align: center;
+}
+
+.type-validation.view-detail figcaption {
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+}
+
+.type-validation.view-detail.status-approved {
+  figure { border-color: $successBorder; background-color: $successBackground; }
+  figcaption { color: $successText; }
+}
+
+.type-validation.view-detail.status-rejected {
+  figure { border-color: $errorBorder; background-color: $errorBackground; }
+  figcaption { color: $errorText; }
+}
+
+.type-validation.view-detail.status-pending {
+  figure { border-color: $infoBorder; background-color: $infoBackground; }
+  figcaption { color: $infoText; }
+}
+
+.validation-img {
+	max-height: 360px;
+}
+
+.validation-meta-data {
+	margin: 15px 15px 15px 0;
+}
+
+.validation-status {
+	margin-bottom: 8px;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.validation-status .approved {
+	color: $successText;
+	top: -5px;
+	position: relative;
+}
+
+.validation-status .pending, .validation-status .pending  { // use with icon-tasks or maybe icon-inbox
+	color: $infoText;
+	top: -5px;
+	position: relative;
+}
+
+.validation-status .rejected {  // use with icon-thumbs-down
+	color: $errorText;
+	top: -5px;
+	position: relative;
+}
+
+h3 .label {
+	font-size: 16px;
+	line-height: 20px;
+	position: relative;
+	top: -3px;
+	left: 15px;
+}

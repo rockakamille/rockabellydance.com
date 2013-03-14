@@ -1,0 +1,5 @@
+*.swp
+node_modules
+.project
+.sass-cache
+css/*.css
