@@ -23,6 +23,13 @@ Coming soon
 *   Proposal Generation Start up - http://protosal.com
 *   Technical Blog - http://thomasdavis.github.com
 *   Quora - http://www.quora.com/Thomas-Davis
-*   StackOverflow - http://stackoverflow.com/users/580675/thomas-davis
+*   StackOverflow - http://stackoverflow.com/users/580675/thomas-d
+
+** Foundation Install Notes **
+
+* Install Ruby
+* gem install compass
+* gem install zurb-foundation
+
 
 Love you mum!
