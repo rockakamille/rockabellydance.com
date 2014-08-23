@@ -44,6 +44,10 @@
 // @import "foundation/components/dropdown";
 
 // hacky stuff follows!
+h2, h3, h4 {
+    font-family: $copperplate;
+    // not sure why this doesn't get set at body level
+}
 h3 {
     font-size: 16px;
 }
