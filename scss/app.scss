@@ -44,6 +44,11 @@
 // @import "foundation/components/dropdown";
 
 // hacky stuff follows!
+
+.top-bar-section ul li > a {
+    padding: 0;
+}
+
 h2, h3, h4 {
     font-family: $copperplate;
     // not sure why this doesn't get set at body level
@@ -86,4 +91,8 @@ h4 {
   height: 30px;
   display: inline;
   padding: 0 10px;
+}
+
+#main-menu {
+  padding-bottom: 7px;
 }
