@@ -14,6 +14,16 @@ define([
       '/classes': 'classes',
       '/contact': 'contact',
       '/events': 'events',
+      '/videos': 'videos',
+      '/stills': 'stills',
+      '/plaything-stills': 'plaything-stills',
+      '/kamille': 'kamille',
+      '/melissa': 'melissa',
+      '/kirstin': 'kirstin',
+      '/playthings': 'playthings',
+      '/guest-artists': 'guest-artists',
+      '/tees': 'tees',
+      '/tickets': 'tickets',
 
       // Default - catch all
       '*actions': 'defaultAction'
@@ -54,16 +64,76 @@ define([
         classesPage.render();
       });
     });
-		router.on('route:contact', function (section) {
+   router.on('route:contact', function (section) {
       require(['views/contact/page'], function (ContactPage) {
         var contactPage = Vm.create(appView, 'ContactPage', ContactPage, {section: section});
         contactPage.render();
       });
-		});
+    });
     router.on('route:events', function () {
       require(['views/events/page'], function (EventsPage) {
         var eventsPage = Vm.create(appView, 'EventsPage', EventsPage);
         eventsPage.render();
+      });
+    });
+    router.on('route:videos', function () {
+      require(['views/videos/page'], function (VideosPage) {
+        var videosPage = Vm.create(appView, 'VideosPage', VideosPage);
+        videosPage.render();
+      });
+    });
+    router.on('route:stills', function () {
+      require(['views/stills/page'], function (StillsPage) {
+        var stillssPage = Vm.create(appView, 'StillsPage', StillsPage);
+        stillsPage.render();
+      });
+    });
+    router.on('route:plaything-stills', function () {
+      require(['views/plaything-stills/page'], function (PlaythingStillsPage) {
+        var playthingStillsPage = Vm.create(appView, 'PlaythingStillsPage', PlaythingStillsPage);
+        playthingStillsPage.render();
+      });
+    });
+    router.on('route:kamille', function () {
+      require(['views/kamille/page'], function (KamillePage) {
+        var kamillePage = Vm.create(appView, 'KamillePage', KamillePage);
+        kamillePage.render();
+      });
+    });
+    router.on('route:melissa', function () {
+      require(['views/melissa/page'], function (MelissaPage) {
+        var melissaPage = Vm.create(appView, 'MelissaPage', MelissaPage);
+        melissaPage.render();
+      });
+    });
+    router.on('route:kirsten', function () {
+      require(['views/kirsten/page'], function (KirstinPage) {
+        var kirstenPage = Vm.create(appView, 'KirstinPage', KirstinPage);
+        kirstenPage.render();
+      });
+    });
+    router.on('route:playthings', function () {
+      require(['views/playthings/page'], function (PlaythingsPage) {
+        var playthingsPage = Vm.create(appView, 'PlaythingsPage', PlaythingsPage);
+        playthingsPage.render();
+      });
+    });
+    router.on('route:guest-artists', function () {
+      require(['views/guest-artists/page'], function (GuestPage) {
+        var guestArtistsPage = Vm.create(appView, 'GuestPage', GuestPage);
+        guestArtistsPage.render();
+      });
+    });
+    router.on('route:tees', function () {
+      require(['views/tees/page'], function (TeesPage) {
+        var teesPage = Vm.create(appView, 'TeesPage', TeesPage);
+        teesPage.render();
+      });
+    });
+    router.on('route:tickets', function () {
+      require(['views/tickets/page'], function (TicketsPage) {
+        var ticketsPage = Vm.create(appView, 'TicketsPage', TicketsPage);
+        ticketsPage.render();
       });
     });
     Backbone.history.start();
