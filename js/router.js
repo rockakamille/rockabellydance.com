@@ -84,7 +84,7 @@ define([
     });
     router.on('route:stills', function () {
       require(['views/stills/page'], function (StillsPage) {
-        var stillssPage = Vm.create(appView, 'StillsPage', StillsPage);
+        var stillsPage = Vm.create(appView, 'StillsPage', StillsPage);
         stillsPage.render();
       });
     });
@@ -106,10 +106,10 @@ define([
         melissaPage.render();
       });
     });
-    router.on('route:kirsten', function () {
-      require(['views/kirsten/page'], function (KirstinPage) {
-        var kirstenPage = Vm.create(appView, 'KirstinPage', KirstinPage);
-        kirstenPage.render();
+    router.on('route:kirstin', function () {
+      require(['views/kirstin/page'], function (KirstinPage) {
+        var kirstinPage = Vm.create(appView, 'KirstinPage', KirstinPage);
+        kirstinPage.render();
       });
     });
     router.on('route:playthings', function () {
