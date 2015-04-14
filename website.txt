@@ -1,0 +1,140 @@
+git statusWebsite:
+
+open orange wheel "aptana studio 3"
+
+websites organized into projects. if correct project doesn't open need to click on rockabellydance.com to open
+
+
+Can change color of aptana screen with little color wheel thingy
+
+Index.html not my index page, prob not changing it. this is where meta tags are. or if I want to add tracking
+
+clicking on the green arrow runs the website in a test browser. If it looks bad then style sheet is not compiled or missing or broken
+might need to select index.html (it is at the bottom section of the folders)
+
+to change the style sheets you look in scss folder and change those sheets. then compile them in terminal section of bottom box, type
+"compass compile" and check with the green white arrow.
+
+compass is the name of the compiling program. can ask ben if you're going to do a lot of changes another way to do it.
+
+to change content look in templates folder.
+
+header and footer are the same on every page.
+
+dashboard is index page
+ll
+have to add pictures to the img folder in order to add them to website
+
+
+The "alt" after the picture is the words that will show up if the picture won't load
+
+ADDING STUFF
+
+Type git pull to bring mine up to date if Ben made changes
+
+Then change things
+
+when done changing things have to commit the changes (get rid of stars)
+type "git status" shows changes
+then type "git add ." (don't forget . The dot means every file) to add all or
+"git add filename" to add just one... have to type out the full path, not just the filename. can also just put in the folder if there are several files in it.
+then exactly as typed after colon: $ git commit -a -m "message telling everyone what you just did"
+type git status at end look for it to say working directory clean, also type git status in the middle at any time to doublecheck what you are doing
+
+If you get stuck in vi editor (cursor at top can't do anything) type ":q!"
+
+UNTRACKED
+If you see a message that says untracked when I do git status- if they are files I don't want to track talk to Ben.
+
+If you DO want the files (like they are new images or pages) then:
+next to $ type "git add <name of file or folder with files>
+or
+"git add ." (this will add ALL untracked files!)
+
+WHEN I AM DONE
+
+-go to the rockabellydance.com directory. so that you can save all the changes in all the folders.
+
+Look at ~/Documents/My Web Sites/rockabellydance.com/templates/page
+
+If there is anything after rockabellydance, you need to go up the directories to it. In this case, you need to go up two directories. 
+
+Typing cd . is the directory you are on.
+Typing cd .. tells it to go up a directory.
+You want it to say: 
+kamille@R2D2 ~/Documents/My Web Sites/rockabellydance.com (master)
+Type cd ../..
+for one directory type cd ..
+
+*if images are not committing then need to type in git add img
+then git commit -a -m "message"
+
+next to $ type "git status"
+Make sure that all the untracked files you don't need - if there are some go to UNTRACKED above.  All the files you CHANGED (not new files) should have "Changes not staged for commit".  You need to commit them.
+
+next to $ type "git commit -a -m 'some message describing the changes'"
+
+next to $ type "git push origin master"
+then put in username rocka, onedancer
+
+To put the changes live you need to:
+
+ssh to ubuntu@rockabellydance.com
+using the BitviseSSH Client (next to Aptana icon)
+
+Use the rockabelly profile (should be default)
+Click login button at bottom
+In BLACK window:
+Type the following commands (one per line, stuff will happen imbetween it's ok. make sure there is a space after cd on the first line) 
+prompt$ cd /var/www/rockabellydance.com
+prompt$ sudo git pull
+prompt$ sudo compass compile
+
+cd= change directory
+sudo= execute the following command as superuser
+
+Check website using browser at http://rockabellydance.com - you might have to use control-reload or alt-reload to clear cache and see new changes.
+
+
+Then logout/quit from BitviseSSH.
+
+
+<li> means list item  
+<ul> unordered list (you get dots)
+<h3> header element level three 
+
+TO PULL THE WEBSITE FROM THE WEB (if Ben makes changes)
+
+type git pull
+type compass compile
+need to be in My Web Sites/rockabellydance.com (get there by typing cd . which takes you up a level of the folders until you are at the top. More dots takes you up more.
+
+To add a link:
+Type exactly with same spaces <h4><a href="http://www.etc">Title you want to see</a></h4>  can also be <li>
+
+
+/c/Users/kamille/Documents/My Web Sites/rockabellydance.com
+UNIX COMMANDS:
+
+To find the absolute path of the current working directory!
+$ pwd
+
+To change directories (folders in finder)
+$ cd name of directory
+
+To change to directory above you (parent)
+$ cd ..
+
+Directories can be "chained" with /
+so…
+$ cd this/that
+goes to the "that" directory under the "this" directory
+
+To list the contents of a directory:
+$ ls
+
+in any command when you are referring to a file or directory, you can hit "tab" and it will show all the possible "completions" and finish them if possible.
+
+
+
+

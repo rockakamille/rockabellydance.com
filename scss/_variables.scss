@@ -44,20 +44,21 @@ $linkColorHover:        darken($linkColor, 15%) !default;
 
 // Typography
 // -------------------------
-$copperplate:     Copperplate, "Copperplate Gothic Light", "Copperplate Light", sans-serif;
-
+// copperplate was the first font used, now changed to book antiqua
+//$copperplate:     Copperplate, "Copperplate Gothic Light", "Copperplate Light", sans-serif;
+$basefont:     Book Antiqua, "Book Antiqua Regular", "Book Antiqua Bold", serif;
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
 // Now create some variables for the font stacks we want to use on this site.
-$baseFontFamily: $copperplate; // The font family set on the html element.
-$fontBody:        $copperplate;
+$baseFontFamily: $basefont; // The font family set on the html element.
+$fontBody:        $basefont;
 
 //$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 //$serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
-$sansFontFamily:        $copperplate;
-$serifFontFamily:       $copperplate;
+$sansFontFamily:        $basefont;
+$serifFontFamily:       $basefont;
 $monoFontFamily:        $courier;
 
 //$baseFontSize:          14px !default;

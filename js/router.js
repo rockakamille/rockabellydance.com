@@ -23,7 +23,7 @@ define([
       '/playthings': 'playthings',
       '/guest-artists': 'guest-artists',
       '/tees': 'tees',
-      '/tickets': 'tickets',
+      '/show': 'show',
 
       // Default - catch all
       '*actions': 'defaultAction'
@@ -130,10 +130,10 @@ define([
         teesPage.render();
       });
     });
-    router.on('route:tickets', function () {
-      require(['views/tickets/page'], function (TicketsPage) {
-        var ticketsPage = Vm.create(appView, 'TicketsPage', TicketsPage);
-        ticketsPage.render();
+    router.on('route:show', function () {
+      require(['views/show/page'], function (ShowPage) {
+        var showPage = Vm.create(appView, 'ShowPage', ShowPage);
+        showPage.render();
       });
     });
     Backbone.history.start();
