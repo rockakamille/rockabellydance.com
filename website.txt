@@ -80,11 +80,18 @@ then put in username rocka, onedancer
 To put the changes live you need to:
 
 ssh to ubuntu@rockabellydance.com
+ON THE PC:
 using the BitviseSSH Client (next to Aptana icon)
 
 Use the rockabelly profile (should be default)
 Click login button at bottom
 In BLACK window:
+
+ON THE LAP TOP - in the aptana "terminal" window
+prompt$ ssh -i ~/.ssh/RBDC.pem ubuntu@rockabellydance.com
+
+THEN CONTINUE BELOW
+
 Type the following commands (one per line, stuff will happen imbetween it's ok. make sure there is a space after cd on the first line) 
 prompt$ cd /var/www/rockabellydance.com
 prompt$ sudo git pull
